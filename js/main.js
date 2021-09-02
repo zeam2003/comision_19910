@@ -1,42 +1,15 @@
-let nuestraEdad = prompt('Ingrese su edad');
-let año = 2021;
+let nombreUsuario = prompt('Ingresa tu nombre');
+alert('Hola ' + nombreUsuario);
 
+let edadUsuario = prompt('Ingresa tu edad');
 
-console.log(parseInt(nuestraEdad));
-alert(año);
+let edadNumero = parseInt(edadUsuario);
 
+let sumar20 = 20;
 
-// alert(nuestraEdad);
+alert('Tu número de la suerte es: ' + (edadNumero + sumar20));
+console.log('suma de edad y numero almacenado: ',edadNumero + sumar20);
 
-
-
-
-
-
-
-
-// let nombre = prompt('Ingrese su nombre: ');
-/* let nombre = 'Emiliano';
-let apellido = 'Kosh';
-
-console.log(nombre, apellido);
- */
-
-
-// var usuario = 'Dante'; // Esto no se tiene que usar
-/* 
-let usuario = 'Dante';
-
-
-const usuario2 = 'Dante';
- */
-
-/* let edadJuan = 20;
-
-let edadMatias = 18;
-
-let sumaEdades = edadJuan + edadMatias; */
-
-
-// console.log(sumaEdades);
-
+let apellido = prompt('Ingresa tu apellido');
+let email = prompt('ingresa tu email');
+alert('Bienvendido! ' + nombreUsuario + ' ' + apellido + ' ' + 'Te contactaremos a: ' + email );
