@@ -1,6 +1,125 @@
+//Clase 3
+
+// Entregable
+
+
+//Practica
+
+/*let entrada = prompt('Ingresar un nombre');
+while( entrada != 'ESC') {
+    switch (entrada) {
+        case "ANA":
+            alert("Hola Ana");
+            break;
+        case "JUAN":
+            alert("Hola Juan");
+            break;    
+    
+        default:
+            alert('Quien sos?');
+            break;  
+    }
+    entrada = prompt('Ingresar un nombre');    
+    console.log(entrada);
+} 
+
+
+
+let numero = 0;
+
+do {
+    numero = prompt('Ingresar');
+    console.log(numero);
+} while( parseInt(numero)); */
+
+/* let entrada = prompt('Ingresar un dato');
+
+do {
+    console.log('Primera vez');
+    entrada = prompt('Ingresar otro dato');
+}
+
+while (entrada != 'ESC'); */
+
+
+/* let entrada = prompt('Ingresar un dato');
+
+while (entrada != 'ESC') {
+    alert('El usuario Ingreso: ' + entrada);
+    entrada = prompt('Ingresar otro dato');
+} */
+
+
+/* for (let i = 1; i <= 10; i++ ) {
+    if ( i == 5 ) {
+        continue;
+    }
+
+    console.log(i);
+}
+ */
+/* 
+for (let i = 1; i <= i; i++ ) {
+    if ( i == 5 ) {
+        break;
+    }
+
+    console.log(i);
+} */
+
+
+/* for (let i = 1; i <= 2; i++) {
+    let ingresarNombre = prompt('Ingresar Nombre');
+    console.log(' Turno N° ' + i + ' Nombre: ' + ingresarNombre);
+}
+ */
+/* let ingresarNumero = parseInt(prompt('Ingresar Numero'));
+
+for (let i = 1; i <= 10; i++) {
+    let resultado = ingresarNumero * i;
+    console.log(ingresarNumero + 'x' + i + '=' + resultado);
+} */
+
+// let inicio = 1; 
+// let fin = 10;
+
+/* let inicio = prompt("Ingrese dia");
+let finDeMes = 30;
+for (inicio; inicio <= finDeMes; inicio++) {
+    console.log('Inicio vale: ', inicio); */
+
+/* for (let inicio = 1; inicio <= 5; inicio++) {
+    console.log(inicio);
+ 
+
+
 //Clase 2
 
+/*Entregable 
+let numero = prompt("Ingrese un Número");
 
+if( numero > 1000 ) {
+    alert("El número es mayor a 1000");
+} else {
+    alert("El número no cumple la condición");
+}
+
+let textoIngresado = prompt("Ingrese un Texto");
+
+if ( textoIngresado == "Hola" ) {
+    console.log("Se ingreso Hola");
+} else {
+    console.log("No se ingreso la palabra esperada");
+}
+
+let numeroIngresado = prompt("Ingrese nuevamente un Número");
+
+if (numeroIngresado >= 10 && numeroIngresado <= 50 ){
+    alert("estas entre 10 y 50");
+} else {
+    alert("No estas entre el rango esperado");
+}
+*/
 
 /* 
 let nombreIngresado = prompt('Ingresar Nombre');
