@@ -12,8 +12,13 @@ do{
 
 } while (resp === "S");
 
-if(cart > 0) {
-    alert(`Su compra tiene un total de $${cart}`);
-}
+if(compraAcumulada > 0) {
+    alert(
+        `** Detalle de su Compra: \n
+         ## Items: $${compraAcumulada}\n
+         ## Iva:    $${impuestos}\n
+         ## Total: $${suma(compraAcumulada, impuestos)}
+        `);
+} 
 
 alert('Gracias por su compra');

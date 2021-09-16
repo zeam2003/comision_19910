@@ -17,11 +17,15 @@ const jymPrice    = 800;
 const salamePrice = 860;
 
 /*Lista de Stock*/
-let muzzaStock  = 250;
-let napoStock   = 150;
-let jymStock    = 130;
-let salameStock = 125;
+let muzzaStock  = 10;
+let napoStock   = 3;
+let jymStock    = 4;
+let salameStock = 2;
 
+/*contadores*/
 let cart = 0;
+let compraAcumulada = 0;
+let impuestosIva = 0;
+let impuestos = 0;
 
 let resp = 'S';

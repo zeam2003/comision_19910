@@ -9,6 +9,27 @@ const isStock = (quantity, stock) => {
     else return true;
 };
 
+/*Realiza la compra */
+const buyProcess = (quantity, price) => {
+    cart += (quantity * price);
+    impuestosIva = iva(cart);
+    compraSuma(cart, impuestosIva);
+    cart = 0;
+    impuestosIva = 0;
+}
+
+/*Calcula Iva*/
+const iva = (x) => x * 0.21;
+
+/* Suma totales acumulados durante todo el proceso de compra*/
+const compraSuma = ( a, b ) => {
+    compraAcumulada += a;
+    impuestos += b;
+}
+
+/* Suma básica */
+const suma = (a,b) => a + b;
+
 /*Ejecuta el agregado de los items al carrito 
     recibe option = la opcion seleccionada por el usuario
     qty = la cantidad de items de lo seleccionado
@@ -17,14 +38,14 @@ const addToCart = (option, quantity) => {
     switch (option) {
         case 1:
             if(isStock(quantity, muzzaStock)) {
-                cart += (quantity * muzzaPrice);
+                buyProcess(quantity, muzzaPrice)
                 muzzaStock -= quantity;
                 alert(`Pizza Muzzarella agregada al carrito`);
             }
             break;
         case 2:
             if(isStock(quantity, napoStock)) {
-                cart += (quantity * napoPrice);
+                buyProcess(quantity, napoPrice);
                 napoStock -= quantity;
                 alert(`Pizza Napolitana agregada al carrito`);
             }
@@ -32,7 +53,7 @@ const addToCart = (option, quantity) => {
             
         case 3:
             if(isStock(quantity, jymStock)) {
-                cart += (quantity * jymPrice);
+                buyProcess(quantity, jymPrice);
                 jymStock -= quantity;
                 alert(`Pizza Jamon y Morrones agregada al carrito`);
             }
@@ -40,7 +61,7 @@ const addToCart = (option, quantity) => {
             
         case 4:
             if(isStock(quantity, salameStock)) {
-                cart += (quantity * salamePrice);
+                buyProcess(quantity, salamePrice);
                 salameStock -= quantity;
                 alert(`Pizza Salame agregada al carrito`);
             }
