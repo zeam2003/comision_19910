@@ -27,5 +27,6 @@ let cart = 0;
 let compraAcumulada = 0;
 let impuestosIva = 0;
 let impuestos = 0;
+let descuento = 0.12;
 
 let resp = 'S';

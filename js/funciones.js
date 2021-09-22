@@ -13,6 +13,8 @@ const isStock = (quantity, stock) => {
 const buyProcess = (quantity, price) => {
     cart += (quantity * price);
     impuestosIva = iva(cart);
+    const desc1 = new Descuento(cart, impuestosIva)
+    desc1.aplicarDescuento()
     compraSuma(cart, impuestosIva);
     cart = 0;
     impuestosIva = 0;
@@ -34,6 +36,22 @@ const suma = (a,b) => a + b;
     recibe option = la opcion seleccionada por el usuario
     qty = la cantidad de items de lo seleccionado
 */
+
+class Descuento {
+    constructor(cart, impuestosIva) {
+        this.desCart = parseFloat(cart);
+        this.descImpuesto = parseFloat(impuestosIva)
+        console.log(this.desCart);
+    }
+    aplicarDescuento() {
+        this.desCart = (cart - (cart * descuento))
+        cart = this.desCart;
+        this.descImpuesto = ( impuestosIva - ( impuestosIva * descuento));
+        impuestosIva = this.descImpuesto;
+        console.log('Se aplicaron descuentos!');
+    }
+}
+
 const addToCart = (option, quantity) => {
     switch (option) {
         case 1:

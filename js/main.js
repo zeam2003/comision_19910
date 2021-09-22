@@ -17,7 +17,7 @@ if(compraAcumulada > 0) {
         `** Detalle de su Compra: \n
          ## Items: $${compraAcumulada}\n
          ## Iva:    $${impuestos}\n
-         ## Total: $${suma(compraAcumulada, impuestos)}
+         ## Total: $${suma(compraAcumulada, impuestos) }
         `);
 } 
 
