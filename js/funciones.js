@@ -64,6 +64,11 @@ const addToCart = (option, quantity) => {
 //Ejecuta el Menu de forma dinamica, segun los elementos del Array//
 const initialMenu = () => {
     let menu = "Elija una opción: \n";
+    function SortArray(x, y) {
+        return x.name.localeCompare(y.name);
+    }
+    productsOnSale.sort(SortArray);
+
     productsOnSale.forEach((product, i) => {
             menu += + i+1 + ".-" + product.name + '\n';
     });
