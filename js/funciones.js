@@ -68,7 +68,6 @@ const initialMenu = () => {
         return x.name.localeCompare(y.name);
     }
     productsOnSale.sort(SortArray);
-
     productsOnSale.forEach((product, i) => {
             menu += + i+1 + ".-" + product.name + '\n';
     });
