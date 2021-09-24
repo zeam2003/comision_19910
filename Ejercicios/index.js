@@ -1,3 +1,135 @@
+// Clase 6 //
+
+/* 
+const addToCart = (option, quantity) => {
+    switch (option) {
+        case 1:
+            if(isStock(quantity, muzzaStock)) {
+                buyProcess(quantity, muzzaPrice)
+                muzzaStock -= quantity;
+                alert(`Pizza Muzzarella agregada al carrito`);
+            }
+            break;
+        case 2:
+            if(isStock(quantity, napoStock)) {
+                buyProcess(quantity, napoPrice);
+                napoStock -= quantity;
+                alert(`Pizza Napolitana agregada al carrito`);
+            }
+            break;
+            
+        case 3:
+            if(isStock(quantity, jymStock)) {
+                buyProcess(quantity, jymPrice);
+                jymStock -= quantity;
+                alert(`Pizza Jamon y Morrones agregada al carrito`);
+            }
+            break;    
+            
+        case 4:
+            if(isStock(quantity, salameStock)) {
+                buyProcess(quantity, salamePrice);
+                salameStock -= quantity;
+                alert(`Pizza Salame agregada al carrito`);
+            }
+            break;         
+    
+        default:
+            alert('Opción no valida');
+    }
+    return true;
+};
+ */
+/* class Producto {
+    constructor(nombre, precio) {
+        this.nombre = nombre.toUpperCase();
+        this.precio = parseFloat(precio);
+        this.vendido = false;
+    }
+
+    sumarIva() {
+        this.precio = this.precio * 1.21;
+    }
+}
+
+const productos = [];
+productos.push(new Producto('arroz', '125'));
+productos.push(new Producto('fideo', '70'));
+productos.push(new Producto('pan', '50'));
+
+for (const producto of productos) producto.sumarIva();
+
+console.log(productos);
+ */
+
+/* const objeto1 = { id: 1, producto: 'Arroz'};
+const array = [objeto1, {id: 2, producto: 'Fideos'}];
+
+array.push({id: 3, producto: 'Pan'});
+
+// console.log(array[0].producto);
+
+/* for ( const producto of array ) {
+    console.log(producto.producto);
+}
+ 
+console.log(typeof array); */
+
+/* const listaNombres = [];
+let cantidad = 5;
+
+do {
+    let entrada = prompt('Ingresar Nombre');
+    listaNombres.push(entrada.toUpperCase());
+    console.log(listaNombres.length);
+} while (listaNombres.length != cantidad);
+
+const nuevaLista = listaNombres.concat('ANA', 'EMA');
+
+alert(nuevaLista.join('\n'));
+ */
+
+ /* const NUMEROS = [1,2,3,4,5];
+ let letras = ['a', 'b', 'c','e','f','g','h'];
+ let letrasSegundaParte = ['J', 'K'];
+
+ let lasTresPrimerasLetras = letras.slice(0,3);
+
+ console.log(lasTresPrimerasLetras); */
+
+ /* let coders = ['Santiago', 'Paula', 'Maximiliano'];
+
+ let codersOne = coders.toString();
+
+ console.log(NUMEROS.toString());
+
+ letras.push('i');
+
+ let codersTwo = coders.join(' - ')
+
+ let lasDosPartes = letras.concat(letrasSegundaParte);
+
+ console.log(lasDosPartes);
+ console.log(codersTwo); */
+
+/*  let resultado1 = NUMEROS[0] + NUMEROS[2];
+
+ for (let index = 0; index < 5; index++) {
+    console.log(NUMEROS[index]);
+}
+ */
+
+ // let primerNumero = NUMEROS[0];
+ // let ultimo = NUMEROS.length - 1;
+
+
+ /* console.log(resultado1);
+
+
+console.log(NUMEROS[NUMEROS.length - 1]); */
+
+
+
 // Clase 5 //
 
 /*

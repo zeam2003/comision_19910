@@ -1,8 +1,8 @@
 alert('Bienvenido a PartyApp!!!');
 
 do{
-    let option = parseInt(prompt(menu));
-    if(option === 5) break;
+    let option = initialMenu();
+    if(option === productsOnSale.length + 1) break;
     let qty = parseInt(prompt(SelectedQty));
 
     addToCart(option, qty);
@@ -10,7 +10,7 @@ do{
     resp = prompt('Desea seguir comprando?  S/N');
 
 
-} while (resp === "S");
+} while (resp === "S" || resp === "s");
 
 if(compraAcumulada > 0) {
     alert(
@@ -21,4 +21,4 @@ if(compraAcumulada > 0) {
         `);
 } 
 
-alert('Gracias por su compra');
+alert('Gracias, vuelva pronto');

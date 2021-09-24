@@ -1,26 +1,32 @@
 /*Variables generales para el desarrollo de Party App*/
-
-const menu = `Cual Pizza probamos hoy?: 
-1.-Muzzarella
-2.-Napolitana
-3.-Jamon y Morrones
-4.-Salame
-5.-Salir
-`;
-
 const SelectedQty = `Cuantas quieres pedir?`;
 
-/*Lista de Precios de Pizzas*/
-const muzzaPrice  = 750;
-const napoPrice   = 850;
-const jymPrice    = 800;
-const salamePrice = 860;
-
-/*Lista de Stock*/
-let muzzaStock  = 10;
-let napoStock   = 3;
-let jymStock    = 4;
-let salameStock = 2;
+let productsOnSale = [
+    {
+        id: 1,
+        name: 'Grande de Muzza',
+        price: 750,
+        stock: 10
+    },
+    {
+        id: 2,
+        name: 'Napolitana',
+        price: 850,
+        stock: 3
+    },
+    {
+        id: 1,
+        name: 'Jamon y Queso',
+        price: 800,
+        stock: 4
+    },
+    {
+        id: 1,
+        name: 'Salame',
+        price: 860,
+        stock: 2
+    },
+]
 
 /*contadores*/
 let cart = 0;

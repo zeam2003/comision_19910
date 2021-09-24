@@ -41,7 +41,6 @@ class Descuento {
     constructor(cart, impuestosIva) {
         this.desCart = parseFloat(cart);
         this.descImpuesto = parseFloat(impuestosIva)
-        console.log(this.desCart);
     }
     aplicarDescuento() {
         this.desCart = (cart - (cart * descuento))
@@ -52,42 +51,22 @@ class Descuento {
     }
 }
 
+//realiza la busqueda en el Array, luego opera con este para calcular stock y precio, ademas realiza el descuento de stock//
 const addToCart = (option, quantity) => {
-    switch (option) {
-        case 1:
-            if(isStock(quantity, muzzaStock)) {
-                buyProcess(quantity, muzzaPrice)
-                muzzaStock -= quantity;
-                alert(`Pizza Muzzarella agregada al carrito`);
-            }
-            break;
-        case 2:
-            if(isStock(quantity, napoStock)) {
-                buyProcess(quantity, napoPrice);
-                napoStock -= quantity;
-                alert(`Pizza Napolitana agregada al carrito`);
-            }
-            break;
-            
-        case 3:
-            if(isStock(quantity, jymStock)) {
-                buyProcess(quantity, jymPrice);
-                jymStock -= quantity;
-                alert(`Pizza Jamon y Morrones agregada al carrito`);
-            }
-            break;    
-            
-        case 4:
-            if(isStock(quantity, salameStock)) {
-                buyProcess(quantity, salamePrice);
-                salameStock -= quantity;
-                alert(`Pizza Salame agregada al carrito`);
-            }
-            break;         
-    
-        default:
-            alert('Opción no valida');
+    let found = productsOnSale.find(product =>  product.id === option );
+    if(isStock(quantity, found.stock)){
+        buyProcess(quantity, found.price);
+        productsOnSale[option-1].stock -= quantity;
+        alert(`${found.name} fue agregado al carrito!` );
     }
-    return true;
-};
+}
 
+//Ejecuta el Menu de forma dinamica, segun los elementos del Array//
+const initialMenu = () => {
+    let menu = "Elija una opción: \n";
+    productsOnSale.forEach((product, i) => {
+            menu += + i+1 + ".-" + product.name + '\n';
+    });
+    menu += (productsOnSale.length + 1) + ".-Salir" ;
+    return parseInt(prompt(menu));
+}
