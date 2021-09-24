@@ -57,17 +57,18 @@ const addToCart = (option, quantity) => {
     if(isStock(quantity, found.stock)){
         buyProcess(quantity, found.price);
         productsOnSale[option-1].stock -= quantity;
-        alert(`${found.name} fue agregado al carrito!` );
+        alert(`${found.name} fue agregado al carrito! ${compraAcumulada}` );
     }
 }
 
 //Ejecuta el Menu de forma dinamica, segun los elementos del Array//
 const initialMenu = () => {
     let menu = "Elija una opción: \n";
-    function SortArray(x, y) {
+    /*function SortArray(x, y) {
         return x.name.localeCompare(y.name);
     }
-    productsOnSale.sort(SortArray);
+    let order = productsOnSale.sort(SortArray);
+    console.log(order);*/
     productsOnSale.forEach((product, i) => {
             menu += + i+1 + ".-" + product.name + '\n';
     });
