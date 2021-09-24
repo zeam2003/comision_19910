@@ -54,10 +54,11 @@ class Descuento {
 //realiza la busqueda en el Array, luego opera con este para calcular stock y precio, ademas realiza el descuento de stock//
 const addToCart = (option, quantity) => {
     let found = productsOnSale.find(product =>  product.id === option );
+    console.log(option);
     if(isStock(quantity, found.stock)){
         buyProcess(quantity, found.price);
         productsOnSale[option-1].stock -= quantity;
-        alert(`${found.name} fue agregado al carrito! ${compraAcumulada}` );
+        alert(`${found.name} fue agregado al carrito! $${compraAcumulada}` );
     }
 }
 

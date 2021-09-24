@@ -36,3 +36,5 @@ let impuestos = 0;
 let descuento = 0.12;
 
 let resp = 'S';
+
+let order = [];
