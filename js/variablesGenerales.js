@@ -15,13 +15,13 @@ let productsOnSale = [
         stock: 3
     },
     {
-        id: 1,
+        id: 3,
         name: 'Jamon y Queso',
         price: 800,
         stock: 4
     },
     {
-        id: 1,
+        id: 4,
         name: 'Salame',
         price: 860,
         stock: 2
