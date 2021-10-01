@@ -28,6 +28,90 @@ let productsOnSale = [
     },
 ]
 
+class Producto {
+    constructor( codigo, nombre, precio, stock, negocio) {
+        //this.id = id;
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.precio = precio;
+        this.stock = stock;
+        this.negocio = negocio;
+    }
+}
+
+class Categoria {
+    constructor(nombre) {
+        this.nombre = nombre;
+    }
+
+    cargarCategoria() {
+        const categoriasDisponibles = JSON.parse(localStorage.getItem(`${this.nombre}`));
+
+        if(categoriasDisponibles != null ){ 
+            this.categorias = categoriasDisponibles;
+        } else {
+            this.categorias = [];
+        }
+    }
+
+    agregarProducto(producto) {
+        if (this.categorias.find(item => item.codigo == producto.codigo)) {
+            return 'Este producto ya existe en el inventario';
+        } else {
+            this.categorias.push(producto);
+            return 'Producto agregado exitosamente';
+        }
+    }
+
+    actualizacionGeneral() {
+        localStorage.setItem(`${this.nombre}`, JSON.stringify(this.categorias));
+    }
+
+    mostrarProductos() {
+        const contenedor = document.createElement('div');
+        const nombreCategoria = document.createElement('h1');
+        nombreCategoria.textContent = `Esta viendo la categoria: ${this.nombre}`;
+        contenedor.appendChild(nombreCategoria);
+
+        this.categorias.forEach(producto => {
+            contenedor.appendChild(this.armarCard(producto));
+        });
+
+        document.body.appendChild(contenedor);
+    }
+
+
+    armarCard(producto) {
+        const card = document.createElement('div');
+        card.classList.add('card');
+       
+        const nombreProducto = document.createElement('h4');
+        nombreProducto.textContent = `${producto.nombre}`;
+        card.appendChild(nombreProducto);
+
+        const precioProducto = document.createElement('p');
+        precioProducto.classList.add('price');
+        precioProducto.textContent = `$ ${producto.precio}`;
+
+        const stockProducto = document.createElement('p');
+        stockProducto.textContent = `Stock: ${producto.stock}`;
+
+        if ( producto.stock > 10 ) {
+            stockProducto.classList.add('suficiente');
+        } else {
+            stockProducto.classList.add('poco');
+        }
+        card.appendChild(stockProducto);
+
+        card.appendChild(precioProducto);
+
+        return card;
+    }
+
+}
+
+
+
 /*contadores*/
 let cart = 0;
 let compraAcumulada = 0;

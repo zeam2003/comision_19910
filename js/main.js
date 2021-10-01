@@ -1,4 +1,4 @@
-alert('Bienvenido a PartyApp!!!');
+/* alert('Bienvenido a PartyApp!!!');
 
 do{
     let option = initialMenu();
@@ -22,3 +22,17 @@ if(compraAcumulada > 0) {
 } 
 
 alert('Gracias, vuelva pronto');
+ */
+
+const statusIngreso = () => prompt('¿Agregamos un Producto?').toUpperCase() === 'Y';
+
+function iniciar() {
+    const ingreso = capitalizarPrimeraLetra(prompt('Ingrese el nombre de la Categoria'))
+    const categoria = new Categoria(ingreso);
+    categoria.cargarCategoria();
+    cargaProductos(categoria);
+    categoria.actualizacionGeneral();
+    categoria.mostrarProductos();
+}
+
+iniciar();

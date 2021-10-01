@@ -1,5 +1,7 @@
 /*Funciones para PartyApp */
 
+/* Funciones para el puesto de Venta */
+
 /*Verifica si hay stock comprando lo que pide el usuario */
 const isStock = (quantity, stock) => {
     if(quantity > stock) {
@@ -76,3 +78,25 @@ const initialMenu = () => {
     menu += (productsOnSale.length + 1) + ".-Salir" ;
     return parseInt(prompt(menu));
 }
+
+//////////////////////////////////////////////////////////////
+
+/* Funciones para la carga de Inventario */
+
+const cargaProductos = (categoria) => {
+    while (statusIngreso()) {
+        const producto = new Producto(
+            prompt('Barcode o PLU'),
+            capitalizarPrimeraLetra(prompt('Nombre')),
+            parseFloat(prompt('Precio $')),
+            parseFloat(prompt('Stock')),
+            capitalizarPrimeraLetra(prompt('Negocio'))
+        )
+        alert(categoria.agregarProducto(producto));
+    }
+}
+
+function capitalizarPrimeraLetra(str) {
+    return str.charAt(0).toUpperCase() + (str.slice(1)).toLowerCase();
+
+  }
