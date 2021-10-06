@@ -35,3 +35,111 @@
   .card button:hover {
     opacity: 0.7;
   }
+
+
+  .border-nav {
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.fuente-Nav {
+    font-size: 1.5rem;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.tamaño-25 {
+    font-size: 1.5rem;
+    color: rgb(53, 196, 148);
+}
+
+#navbarScrollingDropdown::after {
+    display: none;
+}
+
+.spinner-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inlineB {
+    display: inline-block;
+}
+
+.counter1 {
+    padding-left: 5px;
+    padding-right: 5px;
+    color: deeppink;
+    font-size: 1.5rem;
+}
+
+
+.w-60 {
+  max-width: 60%;
+}
+
+.carousel-captionB {
+  top: 82%;
+}
+
+.text-color-verde1 {
+  color: #0A4F51;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.text-color-verde2 {
+  color: #0A4F51;
+  font-size: 19px;
+  font-weight: 300;
+}
+
+.btn-rosa {
+  color: #BB33A7;
+  background-color: #FBD9F8;
+  border-color: #f89af0;
+}
+
+.btn-little-gray {
+  color: rgb(99, 99, 99);
+  background-color: rgb(180, 179, 179, 0.1);
+}
+
+.button-initial {
+  color: white;
+  font-size: 2rem;
+  width: 100%;
+  height: 50vh;
+  background-color: hotpink;
+}
+
+.button-initial-b {
+  color: white;
+  font-size: 2rem;
+  width: 100%;
+  height: 50vh;
+  background-color: rgb(105, 153, 255);
+}
+
+
+.carga-visor {
+  width: 100%;
+  height: 50vh;
+  border: 2px solid rgb(180, 179, 179, 0.1);
+
+}
+
+.visible {
+  display: block;
+}
+
+.no-visible {
+  display: none;
+}

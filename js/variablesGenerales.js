@@ -80,6 +80,24 @@ class Categoria {
         document.body.appendChild(contenedor);
     }
 
+    mostrarCargaCategoria() {
+        let capa = document.getElementById('visor');
+        let tituloCapa = document.getElementById('titulo-visor');
+        let tituloCategoria = document.createElement('h4');
+        tituloCategoria.innerHTML = `Categoria: ${this.nombre}`;
+        tituloCapa.classList.replace('no-visible', 'visible');
+        capa.classList.replace('no-visible', 'visible');
+        capa.appendChild(tituloCategoria);
+        /* const contenido = document.createElement('div');
+        const tituloCategoria = document.createElement('h3');
+        tituloCategoria.textContent = `${this.nombre}`;
+        contenido.appendChild(tituloCategoria);
+
+        document.body.appendChild(contenido); */
+        /* let divActual = document.getElementById('visor');
+        document.body.insertBefore(contenido, divActual); */
+    }
+
 
     armarCard(producto) {
         const card = document.createElement('div');
@@ -122,3 +140,5 @@ let descuento = 0.12;
 let resp = 'S';
 
 let order = [];
+
+let ingresoCategoria = '';

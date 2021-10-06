@@ -79,24 +79,26 @@ const initialMenu = () => {
     return parseInt(prompt(menu));
 }
 
-//////////////////////////////////////////////////////////////
 
-/* Funciones para la carga de Inventario */
+let boton1 = document.getElementById('btn-inventario');
+let boton2 = document.getElementById('btn-pdv');
 
-const cargaProductos = (categoria) => {
-    while (statusIngreso()) {
-        const producto = new Producto(
-            prompt('Barcode o PLU'),
-            capitalizarPrimeraLetra(prompt('Nombre')),
-            parseFloat(prompt('Precio $')),
-            parseFloat(prompt('Stock')),
-            capitalizarPrimeraLetra(prompt('Negocio'))
-        )
-        alert(categoria.agregarProducto(producto));
-    }
+
+boton1.onclick = () => {
+    location.href = ("/pages/inventario.html")
 }
 
-function capitalizarPrimeraLetra(str) {
-    return str.charAt(0).toUpperCase() + (str.slice(1)).toLowerCase();
+boton2.onclick = () => {
+    location.href = ("/pages/pdv.html")
+}
 
-  }
+
+
+
+/* const renderInicial = (products, container) => {
+    container.innerHTML = ""
+
+    for (const product of products) {
+        
+    }
+} */

@@ -24,15 +24,19 @@ if(compraAcumulada > 0) {
 alert('Gracias, vuelva pronto');
  */
 
-const statusIngreso = () => prompt('¿Agregamos un Producto?').toUpperCase() === 'Y';
+//const statusIngreso = () => prompt('¿Agregamos un Producto?').toUpperCase() === 'Y';
+let statusIngreso = false;
 
-function iniciar() {
-    const ingreso = capitalizarPrimeraLetra(prompt('Ingrese el nombre de la Categoria'))
-    const categoria = new Categoria(ingreso);
-    categoria.cargarCategoria();
-    cargaProductos(categoria);
-    categoria.actualizacionGeneral();
-    categoria.mostrarProductos();
+/* function iniciar() {
+    if ( ingresoCategoria != '' || ingresoCategoria != null) {
+        console.log(ingresoCategoria);
+        const categoria = new Categoria(ingresoCategoria);
+        categoria.cargarCategoria();
+        cargaProductos(categoria);
+        categoria.actualizacionGeneral();
+        categoria.mostrarProductos();
+    }
+    
 }
 
-iniciar();
+iniciar(); */
