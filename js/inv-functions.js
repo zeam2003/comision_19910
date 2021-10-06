@@ -11,6 +11,26 @@ if (botonIngreso != null) {
     console.log('no hay nada aquí');
 } */
 
+const contenedorMuestraData = document.getElementById('contenedor-muestra');
+
+const cargaHtml = (dato) => {
+    return `
+        <p class="suficiente">${dato.nombre}</p>
+    `
+}
+
+const renderHtml = (data, container) => {
+    container.innerHTML = "";
+
+    for (const dato of data) {
+        const dataHTML = cargaHtml(dato);
+        console.log(dato);
+        container.innerHTML += dataHTML;
+    }
+};
+
+renderHtml(data, contenedorMuestraData);
+
 let formIngreso = document.getElementById('formulario-ingreso');
 formIngreso.addEventListener('submit', validarFormulario);
 
@@ -19,8 +39,9 @@ function validarFormulario(e) {
     let ingreso = e.target;
     ingresoCategoria = ingreso.children[0].children[0].value;
     const categoria = new Categoria(ingresoCategoria);
+    categoria.cargarCategoria();
     categoria.mostrarCargaCategoria();
-    //categoria.cargarCategoria();
+   
     //cargaProductos(categoria);
 
 }
