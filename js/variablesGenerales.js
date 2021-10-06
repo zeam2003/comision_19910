@@ -88,14 +88,6 @@ class Categoria {
         tituloCapa.classList.replace('no-visible', 'visible');
         capa.classList.replace('no-visible', 'visible');
         capa.appendChild(tituloCategoria);
-        /* const contenido = document.createElement('div');
-        const tituloCategoria = document.createElement('h3');
-        tituloCategoria.textContent = `${this.nombre}`;
-        contenido.appendChild(tituloCategoria);
-
-        document.body.appendChild(contenido); */
-        /* let divActual = document.getElementById('visor');
-        document.body.insertBefore(contenido, divActual); */
     }
 
 
