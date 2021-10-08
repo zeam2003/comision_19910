@@ -41,30 +41,38 @@ class Producto {
 
 class Categoria {
     constructor(nombre) {
+        console.log(nombre);
         this.nombre = nombre;
     }
 
     cargarCategoria() {
         const categoriasDisponibles = JSON.parse(localStorage.getItem(`${this.nombre}`));
-
+        console.log(this.nombre);
         if(categoriasDisponibles != null ){ 
             this.categorias = categoriasDisponibles;
+            console.log('tragjo algo');
         } else {
             this.categorias = [];
+            console.log('creo un arreglo vacio');
         }
     }
 
     agregarProducto(producto) {
         if (this.categorias.find(item => item.codigo == producto.codigo)) {
+            console.log('busque');
             return 'Este producto ya existe en el inventario';
+            
         } else {
             this.categorias.push(producto);
+            console.log('agregue');
+            console.log(this.categorias);
             return 'Producto agregado exitosamente';
         }
     }
 
     actualizacionGeneral() {
         localStorage.setItem(`${this.nombre}`, JSON.stringify(this.categorias));
+        console.log(this.nombre, this.categorias);
     }
 
     mostrarProductos() {
@@ -81,15 +89,71 @@ class Categoria {
     }
 
     mostrarCargaCategoria() {
-        let capa = document.getElementById('visor');
-        let tituloCapa = document.getElementById('titulo-visor');
-        let tituloCategoria = document.createElement('h4');
-        tituloCategoria.innerHTML = `Categoria: ${this.nombre}`;
-        tituloCapa.classList.replace('no-visible', 'visible');
-        capa.classList.replace('no-visible', 'visible');
-        capa.appendChild(tituloCategoria);
+        let tituloFormCarga = document.getElementById('titulo-form-carga');
+        let tituloFormIngreso = document.createElement('div')
+
+        if (flagFormulario === true) {
+            tituloFormIngreso.innerHTML = `
+                <div class="text-center btn-little-gray mt-4 mb-4 " id="title-form-dos">
+                    <h5>Nuevo Producto </h5>
+                    <small>Estgamos agregandolo en la categoria ${this.nombre} </small>
+                </div>
+                <form class="row gy-2 gx-3 align-items-center " id="formDos">
+                    <div class="col-auto">
+                      <div class="input-group"> 
+                        <div class="input-group-text">#</div>
+                        <input type="text" class="form-control" id="autoSizingInput" placeholder="PLU o Barcode">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="input-group">
+                        
+                        <input type="text" class="form-control" id="autoSizingInputGroup" placeholder="Producto">
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                        <div class="input-group"> 
+                            <div class="input-group-text">$</div>
+                            <input type="text" class="form-control" id="autoSizingInput" placeholder="Precio">
+                          </div>
+                    </div>
+
+                    <div class="col-auto">
+                        <div class="input-group"> 
+                            <div class="input-group-text">u</div>
+                            <input type="text" class="form-control" id="autoSizingInput" placeholder="Stock">
+                          </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group">
+                          
+                          <input type="text" class="form-control" id="autoSizingInputGroup" placeholder="Negocio">
+                        </div>
+                      </div>
+                    <div class="col-auto">
+                      <button type="submit" class="btn btn-primary">Cargar</button>
+                    </div>
+                  </form>
+                  `
+            tituloFormCarga.appendChild(tituloFormIngreso);
+
+
+        } else {
+            tituloFormIngreso.innerHTML = `
+            <div class="text-center btn-little-gray mt-4 mb-4 " id="title-form-tres">
+                    <h5>Verifique los datos</h5>
+                    <small>Lo que ingresa en esta App se audtiará periodicamente  </small>
+            </div>
+            `
+            tituloFormCarga.appendChild(tituloFormIngreso);
+            
+        }
+
+        
+        
     }
 
+    
 
     armarCard(producto) {
         const card = document.createElement('div');
@@ -134,3 +198,5 @@ let resp = 'S';
 let order = [];
 
 let ingresoCategoria = '';
+let flagCategoria = false;
+let flagFormulario = false;

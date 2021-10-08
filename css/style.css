@@ -143,3 +143,7 @@
 .no-visible {
   display: none;
 }
+
+.border-rosa {
+  border-color: #f89af0 !important;
+}
