@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .fondo {
+    background-color: rgb(206, 74, 166);
+    width: 100%;
+    height: 80vh;
+    }
+       
+    </style>
+</head>
+<body>
+   
+
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+<script>
+    $('body').append(`<div class="fondo">Hola</div>`);
+    $('body').append(`<button id="slideup">SlideUp</button>`);
+    $('body').append(`<button id="slidedown">SlideDown</button>`);
+    $('body').append(`<button id="slidetoggle">SlideToggle</button>`);
+
+    $('#slideup').click(() => {
+        $('div').slideUp('fast');
+    })
+
+    $('#slidedown').click(() => {
+        $('div').slideDown('fast');
+    })
+
+    $('#slidetoggle').click(() => {
+        $('div').toggle('fast');
+    })
+</script>
+</body>
+
+</html>
