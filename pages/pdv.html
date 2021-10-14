@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Simulador de Puesto de Venta</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
     <style>
     .fondo {
     background-color: rgb(206, 74, 166);
@@ -15,8 +17,43 @@
     </style>
 </head>
 <body>
-   
+    <nav class="shadow-sm rounded navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="../assets/img/logo_280x120v3.png" class="d-inline-block align-top" alt="Party-App">
+            </a>
+            <button aria-controls="responsive-navbar-nav" type="button" aria-label="Toggle navigation" class="navbar-toggler collapsed">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse" id="responsive-navbar-nav">
+                <div class="m-auto fuente-Nav navbar-nav">
+                    <a class="nav-link" href="/">Inicio</a>
+                    <div class="nav-item dropdown">
+                        <a id="navbarScrollingDropdown" aria-expanded="false" role="button" class="dropdown-toggle nav-link disabled" tabindex="0">Categorías</a>
+                    </div>
+                    <a class="nav-link disabled" href="/">Mis Pedidos</a>
+                    <a class="nav-link disabled" href="/">Tu Negocio</a>
+                    <a class="nav-link disabled" href="/">Contacto</a>
+                </div>
+                <div class="navbar-nav">
+                    <a class="nav-link disabled" href="/">Cart</a>
+                    <a class="nav-link disabled" href="/">Ingresar</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
+    <div class="container">
+        <div class="text-center btn-little-gray mt-4 ">
+            <h1>Puesto de Venta </h1>
+            <small>Cargue las ventas que esta realiznado al carrito y luego haga presione Finalizar</small>
+        </div>
+        <div id="categorias-botones" class="row border-bottom border-rosa  align-items-center" >
+            
+        </div>  
+        <div id="mensajes"></div>      
+    </div>    
+<!-- 
 <script
   src="https://code.jquery.com/jquery-3.6.0.min.js"
   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
@@ -38,7 +75,12 @@
     $('#slidetoggle').click(() => {
         $('div').toggle('fast');
     })
-</script>
+</script> -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+<script src="/bootstrap/js/bootstrap.bundle.js"></script>
+<script src="../js/jqpdv.js"></script>
 </body>
 
 </html>
