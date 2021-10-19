@@ -13,6 +13,7 @@ const productos = [
     },
 
 ]
+
 $(document).ready(function(){
   // ToDo a revisar posible refactorización de creación de elementos en el localstorage
   /*   console.log('hola');
@@ -26,30 +27,46 @@ $(document).ready(function(){
     }
     console.log(categorias);
      */
-});
+    
 
-for (const producto of productos) {
-    $('#categorias-botones').append(`
-    <div class="col mt-5">
-        <div class="card">
-            <h5 class="card-header">${producto.categoria}</h5>
-            <div class="card-body">
-                <h5 class="card-title">${producto.nombre}</h5>
-                <p class="card-text">$${producto.precio}</p>
-                <button id="btn${producto.id}" type="button" class="btn btn-primary">Agregar</button>
+    
+    for (const producto of productos) {
+        $('#categorias-botones').append(`
+        <div class="col mt-5">
+            <div class="card">
+                <h5 class="card-header">${producto.categoria}</h5>
+                <div class="card-body">
+                    <h5 class="card-title">${producto.nombre}</h5>
+                    <p class="card-text">$${producto.precio}</p>
+                    <button id="btn${producto.id}" type="button" class="btn btn-primary">Agregar</button>
+                </div>
             </div>
         </div>
-    </div>
-    `)
-    $(`#btn${producto.id}`).on('click', function() {
-        console.log(`Agregado ${producto.nombre}`);
-        $('#mensajes').append(`
-        <div class="alert alert-success alert-dismissible fade show  mt-1" role="alert">
-        Se agregó ${producto.nombre}
-        <button type="button" class="btn btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>`);     
+        `)
+        $(`#btn${producto.id}`).on('click', function() {
+            console.log(`Agregado ${producto.nombre}`);
+            $('#mensajes').append(`
+            <div class="alert alert-success alert-dismissible fade show  mt-1" role="alert">
+            Se agregó ${producto.nombre}
+            <button type="button" class="btn btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>`);     
+        });
+    }
+   
+
 });
-}
+
+//$('#contenedor').hide();
+$('nav').slideDown(2000);
+$('#contenedor').fadeIn(2000);
+//$('#categorias-botones').fadeIn(5000);
+
+
+
+
+    
+
+
 
 /* $('#categorias-botones')
     .append('<button id="pdv1" class="btn btn-info">Finalizar</button>')
