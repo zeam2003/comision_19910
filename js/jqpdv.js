@@ -16,21 +16,47 @@ const productos = [
 
 $(document).ready(function(){
   // ToDo a revisar posible refactorización de creación de elementos en el localstorage
-  /*   console.log('hola');
-    let categorias = [];
-    
-    for (let i = 0; i < localStorage.length; i++) {
-        let clave = localStorage.key(i);
-        let categoria = JSON.parse(localStorage.getItem(clave));
-        categorias.push(categoria);
-        
-    }
-    console.log(categorias);
-     */
-    
 
-    
-    for (const producto of productos) {
+  const APIURL = "https://jsonplaceholder.typicode.com/posts";
+
+    $("#categorias-botones").prepend(
+        `<button id="btn-prueba" type="button" class="btn btn-primary">Consulta Ajax de Prueba</button>`
+    );
+        
+    $('#btn-prueba').click(() => {
+        $.ajax({
+            method: "GET",
+            url: APIURL,
+            success: function (res) {
+                console.log('cargue2');
+                for (const {id, title, body} of res){
+                    $('#categorias-botones').append(
+                        `
+                        <div class="col-3 mt-5">
+                            <div class="card">
+                                <h5 class="card-header>${id}</h5>
+                                <div class="card-body">
+                                    <h5 class="card-title">${title}</h5>
+                                    <p class="card-text">${body}</p>
+                                </div>
+                            </div>
+                        </div>
+                        `
+                    )
+                }
+            }
+         });
+    });
+       
+  
+
+
+
+  
+
+
+  // Se comenta para realiar entregable
+    /* for (const producto of productos) {
         $('#categorias-botones').append(`
         <div class="col mt-5">
             <div class="card">
@@ -52,24 +78,14 @@ $(document).ready(function(){
             </div>`);     
         });
     }
-   
+    */
 
 });
 
-//$('#contenedor').hide();
+
+function dev () {
+    
+}
+
 $('nav').slideDown(2000);
 $('#contenedor').fadeIn(2000);
-//$('#categorias-botones').fadeIn(5000);
-
-
-
-
-    
-
-
-
-/* $('#categorias-botones')
-    .append('<button id="pdv1" class="btn btn-info">Finalizar</button>')
-    .on('click', () => {
-        console.log('se dio click en finalizar');
-    }); */
