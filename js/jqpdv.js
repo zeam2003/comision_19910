@@ -50,11 +50,6 @@ $(document).ready(function(){
        
   
 
-
-
-  
-
-
   // Se comenta para realiar entregable
     /* for (const producto of productos) {
         $('#categorias-botones').append(`
